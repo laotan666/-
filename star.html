@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1,  user-scalable=no,minimal-ui" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <title>Star</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="iconfont.css" type="text/css" rel="stylesheet">
+    <style>
+        .icon {
+            font-size: 2em;
+            color: #bebebe;
+            cursor: pointer;
+        }
+        .active {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <span>小米菇凉</span>
+</div>
+<div class="food">
+    <span>商品名称：香菇滑鸡</span>
+</div>
+<div class="star-body">
+    <div class="star-kw">
+            <span class="mei">口味</span>
+            <i id="k1" class="icon iconfont icon-xing"></i>
+            <i id="k2" class="icon iconfont icon-xing"></i>
+            <i id="k3" class="icon iconfont icon-xing"></i>
+            <i id="k4" class="icon iconfont icon-xing"></i>
+            <i id="k5" class="icon iconfont icon-xing"></i>
+    </div>
+    <div class="star-jg">
+            <span class="mei">价格</span>
+            <i id="j1" class="icon iconfont icon-xing"></i>
+            <i id="j2" class="icon iconfont icon-xing"></i>
+            <i id="j3" class="icon iconfont icon-xing"></i>
+            <i id="j4" class="icon iconfont icon-xing"></i>
+            <i id="j5" class="icon iconfont icon-xing"></i>
+    </div>
+    <div class="buttont">
+        <button type="button"><span>提交评价</span></button>
+    </div>
+    <div class="ts">
+        <span>温馨提示：您的评论我们系统将以匿名方式进行!</span>
+    </div>
+</div>
+<script>
+    const klist=[
+    	'#k1',
+        '#k2',
+        '#k3',
+        '#k4',
+        '#k5'
+    ];
+
+    const jlist=[
+        '#j1',
+        '#j2',
+        '#j3',
+        '#j4',
+        '#j5'
+    ];
+
+    klist.forEach( e => $(e).click(function (e) {
+    	for(let i=0; i<5; i++){
+		    $(klist[i]).removeClass('active');
+        }
+    	for (let i=0; i < $(this).index(); i++){
+    		$(klist[i]).addClass('active');
+        }
+    }))
+
+    jlist.forEach( e => $(e).click(function (e) {
+        for(let i=0; i<5; i++){
+            $(jlist[i]).removeClass('active');
+        }
+        for (let i=0; i < $(this).index(); i++){
+            $(jlist[i]).addClass('active');
+        }
+    }))
+</script>
+</body>
+</html>
